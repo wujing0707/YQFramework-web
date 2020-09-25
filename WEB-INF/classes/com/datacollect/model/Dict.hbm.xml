@@ -1,0 +1,81 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+
+<hibernate-mapping package="com.datacollect.model">
+	<class
+		name="Dict"
+		table="sys_dict" schema="dbo">
+		<meta attribute="sync-DAO">false</meta>
+		<id
+			name="codeid"
+			type="string"
+			column="CODEID"
+		>
+			<generator class="uuid"/>
+		</id>
+
+		<property
+			name="code"
+			column="CODE"
+			type="string"
+		
+			length="10"
+		/>
+		<property
+			name="codedesc"
+			column="CODEDESC"
+			type="string"
+		
+			length="100"
+		/>
+		<property
+			name="editmode"
+			column="EDITMODE"
+			type="string"
+			
+			length="2"
+		/>
+		<property
+			name="enabled"
+			column="ENABLED"
+			type="string"
+		
+			length="2"
+		/>
+		<property
+			name="field"
+			column="FIELD"
+			type="string"
+		
+			length="15"
+		/>
+		<property
+			name="fieldname"
+			column="FIELDNAME"
+			type="string"
+		
+			length="20"
+		/>
+		<property
+			name="remark"
+			column="REMARK"
+			type="string"
+			
+			length="200"
+		/>
+	
+		<property
+			name="sortno"
+			column="SORTNO"
+			type="int"
+			
+			length="50"
+		/>
+		
+			
+	
+
+	</class>	
+</hibernate-mapping>

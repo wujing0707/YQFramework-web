@@ -1,0 +1,91 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.wa.framework.quartz.model">
+    <class name="QrtzJobDetails" table="QRTZ_JOB_DETAILS">
+
+        
+        <composite-id name="id" class="QrtzJobDetailsId">
+            <key-property name="schedName" type="java.lang.String" column="SCHED_NAME"/>
+            <key-property name="jobName" type="java.lang.String" column="JOB_NAME"/>
+            <key-property name="jobGroup" type="java.lang.String" column="JOB_GROUP"/>
+        </composite-id>
+        
+        
+        <property 
+            name="description" 
+            column="DESCRIPTION"
+            type="java.lang.String"
+            not-null="false" 
+            unique="false" 
+            length="250"/>
+        
+        <property 
+            name="jobClassName" 
+            column="JOB_CLASS_NAME"
+            type="java.lang.String"
+            not-null="true" 
+            unique="false" 
+            length="250"/>
+        
+        <property 
+            name="isDurable" 
+            column="IS_DURABLE"
+            type="java.lang.String"
+            not-null="true" 
+            unique="false" 
+            length="1"/>
+        
+        <property 
+            name="isNonconcurrent" 
+            column="IS_NONCONCURRENT"
+            type="java.lang.String"
+            not-null="true" 
+            unique="false" 
+            length="1"/>
+        
+        <property 
+            name="isUpdateData" 
+            column="IS_UPDATE_DATA"
+            type="java.lang.String"
+            not-null="true" 
+            unique="false" 
+            length="1"/>
+        
+        <property 
+            name="requestsRecovery" 
+            column="REQUESTS_RECOVERY"
+            type="java.lang.String"
+            not-null="true" 
+            unique="false" 
+            length="1"/>
+        
+        <property 
+            name="jobData" 
+            column="JOB_DATA"
+            type="byte[]"
+            not-null="false" 
+            unique="false" 
+            length="4000"/>
+        
+        <!-- One-To-Many attributes -->
+        
+        <set name="qrtzTriggerss"
+             lazy="true"
+             inverse="true"
+             cascade="none"
+        >
+            <key>
+                <column name="SCHED_NAME"/>
+                <column name="JOB_NAME"/>
+                <column name="JOB_GROUP"/>
+            </key>
+            <one-to-many class="com.wa.framework.quartz.model.QrtzTriggers"/>
+        </set> 
+
+        <!-- Many-To-One attributes -->
+
+    </class>
+</hibernate-mapping>
+

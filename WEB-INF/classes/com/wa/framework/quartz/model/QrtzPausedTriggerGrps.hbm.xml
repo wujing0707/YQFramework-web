@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.wa.framework.quartz.model">
+    <class name="QrtzPausedTriggerGrps" table="QRTZ_PAUSED_TRIGGER_GRPS">
+
+        
+        <composite-id name="id" class="QrtzPausedTriggerGrpsId">
+            <key-property name="schedName" type="java.lang.String" column="SCHED_NAME"/>
+            <key-property name="triggerGroup" type="java.lang.String" column="TRIGGER_GROUP"/>
+        </composite-id>
+        
+        
+        <!-- One-To-Many attributes -->
+
+        <!-- Many-To-One attributes -->
+
+    </class>
+</hibernate-mapping>
+

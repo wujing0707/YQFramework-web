@@ -1,0 +1,87 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:tx="http://www.springframework.org/schema/tx" xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-3.1.xsd
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-3.2.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.1.xsd">
+
+	<!--要调度的对象 -->
+	<bean id="jobBean" class="com.wa.framework.availability.job.DataHandingJob" />	
+	<bean id="jobDetail"
+		class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+		<property name="targetObject" ref="jobBean" />
+		<property name="targetMethod" value="execute" />
+		<!--将并发设置为false -->
+		<property name="concurrent" value="false" />
+	</bean>
+
+	<bean id="trigger"
+		class="org.springframework.scheduling.quartz.CronTriggerFactoryBean">
+		<property name="jobDetail" ref="jobDetail" />
+		<!--表达式，我的是每 30 执行一次 -->
+		<property name="cronExpression" value="0 0/10 23 * * ?" /> 
+	</bean>
+
+
+	<!-- 数据采集定时器 -->
+	<bean id="DataMapSynMethod" class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+		<property name="targetObject" ref="uploadFileController" />
+		<property name="targetMethod" value="SynTempData" />
+		<property name="concurrent" value="false" />
+	</bean>
+	<bean id="DataMapSynMethodTrigger" class="org.springframework.scheduling.quartz.CronTriggerFactoryBean">
+		<property name="jobDetail" ref="DataMapSynMethod" />
+		<!--<property name="cronExpression" value="0 * 23 ? * *" />-->
+		<property name="cronExpression" value="0 0/5 * * * ?" />
+		<property name="startDelay" value="10000" /> <!-- 启动延迟10秒 -->
+	</bean>
+	
+	
+	<!-- 上报数据质量统计定时器-->
+	<bean id="CreateUploadStatMethod" class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+		<property name="targetObject" ref="fileLogDao" />
+		<property name="targetMethod" value="createUploadStat" />
+		<property name="concurrent" value="false" />
+	</bean>
+	<bean id="CreateUploadStatTrigger" class="org.springframework.scheduling.quartz.CronTriggerFactoryBean">
+		<property name="jobDetail" ref="CreateUploadStatMethod" />
+		<property name="cronExpression" value="0 31 23 ? * *" />
+		<property name="startDelay" value="20000" /> <!-- 启动延迟10秒 -->
+	</bean>
+	
+	<!-- 定时生成view -->
+	<bean id="CreateViewMethod" class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+		<property name="targetObject" ref="dynamicBeanController" />
+		<property name="targetMethod" value="CreateView" />
+		<property name="concurrent" value="false" />
+	</bean>
+	<bean id="CreateViewMethodTrigger" class="org.springframework.scheduling.quartz.CronTriggerFactoryBean">
+		<property name="jobDetail" ref="CreateViewMethod" />
+
+		 <property name="cronExpression" value="0 */30 * * * ?" /> 
+
+		<!--  <property name="cronExpression" value="0 */1 * * * ?" />--> 
+		<property name="startDelay" value="10000" /> <!-- 启动延迟10秒 -->
+	</bean>
+	
+	<!-- 总管理类如果将lazy-init='false'那么容器启动就会执行调度程序 -->
+	<bean id="startQuertz"
+		class="org.springframework.scheduling.quartz.SchedulerFactoryBean"
+		lazy-init="false">
+		<property name="triggers">
+			<list>
+				<!--作业调度器,list下可加入其他的调度器 
+				<ref bean="trigger" />-->
+				<ref bean="DataMapSynMethodTrigger" />
+				<ref bean="CreateUploadStatTrigger" />
+				<ref bean="CreateViewMethodTrigger" />
+			</list>
+		</property>
+	</bean>
+
+	
+
+
+</beans>

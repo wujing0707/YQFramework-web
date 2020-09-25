@@ -1,0 +1,60 @@
+@charset "utf-8";
+/* CSS Document */
+/*------------------------------------------LOGIN开始----------------------------------------*/
+html { height:100%; *overflow:hidden;*height:auto;}
+body { height:100%; text-align:center; background:url(../images/bodyBG.gif) 0px 0px repeat-x #4482ff;  }
+.LogRBbg { width:316px; height:316px; background:url(../images/LogRBbg.png) 0px 0px no-repeat;position:absolute; right:0px; bottom:0px; z-index:1;_background:none; }
+.LogLBbg { width:750px; height:1080px; background:url(../images/LogCurve.png) 0px 0px no-repeat; position:absolute; left:0px; bottom:0px; z-index:1; _background:none;}
+.LogRMbg { width:840px; height:640px; background:url(../images/horse.png) 0 0 no-repeat; position:absolute; right:0px;top:50%;margin-top:-340px; z-index:2;_background:none; }
+#wellcome { position:absolute; top:20px; right:20px; z-index:3; }
+#copyright { position:absolute; bottom:20px; left:20px; z-index:3; }
+#centerBox{position:absolute;top:50%;left:50%; margin-top:-285px;margin-left:-377px;z-index:4;}
+/*.centerDiv { display: inline-block; vertical-align: middle; *position:relative;*top:80px;}*/
+/*.hiddenDiv { display: inline-block; height: 100%; margin-left: -1px; overflow: hidden; vertical-align: middle; width: 1px; zoom:1; }*/
+#loginBG,#findPassBG { width:755px; height:569px; }
+#SysNameBox,#SysNameBox1 { width:324px; height:569px; background:url(../images/SysNameBoxBG.jpg) left bottom no-repeat; }
+.logBox,.findPassBox { text-align:left; position:relative; }
+.halfWbg { width:385px; height:249px; padding:23px 18px; text-align:left; background:#85abff; filter:alpha(Opacity=60); -moz-opacity:0.6; opacity: 0.6; }
+#halfWbg2 { height:217px;}
+.LogText,.findPassText { position:absolute; top:23px; left:18px; z-index:5; }
+#LogText1 ul { margin-top:17px; }
+#LogText1 ul li { clear:both; line-height:25px;*line-height:22px; width:380px; }
+#LogText1 ul li a:link, #LogText1 ul li a:hover, #LogText1 ul li a:visited { font:12px/25px "宋体", Arial;*line-height:22px; color:#fff; display:block; width:270px; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; }
+.LogText2{ width:421px;}
+#findPassText2 { width:385px; }
+.LogText2 table th, .LogText2 table td,#findPassText2 table th,#findPassText2 table td { height:30px; line-height:30px; }
+.LogText2 table th,#findPassText2 table th { color:#fff; font-weight:normal; }
+.LogFonBlue { color:#b4c7ff; }
+.LogText2 a:link, .LogText2 a:hover, .LogText2 a:visited ,#findPassText2 a:link,#findPassText2 a:hover,#findPassText2 a:visited { color:#fff; font:12px/32px "宋体", Arial; }
+#LogText1 ul li a:hover, .LogText2 a:hover,#findPassText2 a:hover{ color:#c52452; }
+.logTex, .btnLogin, .btnLogin1 { display:block; border:none; color:#fff; font:18px/32px "宋体", Arial; }
+.logTex { width:150px; padding:0px 3px; height:21px; font:12px/21px "宋体", Arial; color:#2760e2; background:#baccff; border:1px solid #557ff9; }
+.btnLogin, .btnLogin1,.btnStep,.btnStep1,.btnGO,.btnGO1 { width:225px; height:28px; background:url(../images/no-repeatJPG.jpg) 0px 0px no-repeat; cursor:pointer; border:none; }
+.btnLogin1 { background:url(../images/no-repeatJPG.jpg) -228px 0px no-repeat; }
+/*------------------------------------------LOGIN结束----------------------------------------*/
+/*------------------------------------------FindPassword开始----------------------------------------*/
+#SysNameBox1{ background:url(../images/findPassword.jpg) right bottom no-repeat #4164ff; position:relative; overflow:hidden;}
+#SysNameBox1 img{ position:absolute;top:50%;left:50%; margin:-48px 0px 0px -130px; }
+.findPassStep{ width:290px; height:213px; position:absolute; top:43px;left:67px; z-index:2;}
+#step1{ background:url(../images/step.gif) 0px 0px no-repeat;}
+#step2{ background:url(../images/step.gif) -303px 0px no-repeat;}
+#step3{ background:url(../images/step.gif) -607px 0px no-repeat;}
+#step4{ background:url(../images/step.gif) -910px 0px no-repeat;}
+.btnStep{ background:url(../images/no-repeatJPG.jpg) 0px -172px no-repeat; }
+.btnStep1{ background:url(../images/no-repeatJPG.jpg) -228px -172px no-repeat; }
+.btnGO{ background:url(../images/no-repeatJPG.jpg) 0px -203px no-repeat; }
+.btnGO1{ background:url(../images/no-repeatJPG.jpg) -228px -203px no-repeat; }
+
+
+/*------------------------------------------FindPassword结束----------------------------------------*/
+/*------------------------------------------CA tab开始-------------------------------------------------*/
+.nTab{width: 421px;height: 263px; overflow: hidden;}
+.TabTit{ height:50px;border-bottom:1px solid #5569eb;}
+.nTab .TabTit li{ float: left; cursor: pointer; height: 50px;line-height: 50px;font-weight: bold; width: 140px;}
+.nTab .TabTit li a{text-decoration: none;}
+li#TAB1.active{ background:url(../images/CA.png) 0px 0px no-repeat;}
+li#TAB2.active{ background:url(../images/CA.png) -140px 0px no-repeat;}
+li#TAB1.normal{ background:url(../images/CA.png) 0px -50px no-repeat;}
+li#TAB2.normal{ background:url(../images/CA.png) -140px -50px no-repeat;}
+.nTab .TabContent{clear: both; overflow: hidden;text-align:left;}
+/*------------------------------------------CA tab结束-------------------------------------------------*/

@@ -1,0 +1,44 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+
+<hibernate-mapping package="com.wa.framework.log.model">
+	<class
+		name="SysLogNameMap"
+		table="SYS_LOG_NAME_MAP"
+	>
+		<meta attribute="sync-DAO">false</meta>
+		<id
+			name="id"
+			type="string"
+			column="SYS_LOG_NAME_MAP_ID"
+		>
+			<generator class="uuid"/>
+		</id>
+
+		<property
+			name="mapUrl"
+			column="MAP_URL"
+			type="string"
+			not-null="false"
+			length="500"
+		/>
+		<property
+			name="mapName"
+			column="MAP_NAME"
+			type="string"
+			not-null="false"
+			length="500"
+		/>
+		<property
+			name="recordParam"
+			column="RECORD_PARAM"
+			type="boolean"
+			not-null="false"
+			length="1"
+		/>
+
+
+	</class>	
+</hibernate-mapping>

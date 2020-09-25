@@ -1,0 +1,191 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.wa.framework.quartz.model">
+    <class name="QrtzTriggers" table="QRTZ_TRIGGERS">
+
+        
+        <composite-id name="id" class="QrtzTriggersId">
+            <key-property name="schedName" type="java.lang.String" column="SCHED_NAME"/>
+            <key-property name="triggerName" type="java.lang.String" column="TRIGGER_NAME"/>
+            <key-property name="triggerGroup" type="java.lang.String" column="TRIGGER_GROUP"/>
+        </composite-id>
+        
+        
+        <property 
+            name="jobName" 
+            column="JOB_NAME"
+            type="java.lang.String"
+            not-null="true" 
+            unique="false" 
+            length="200"/>
+        
+        <property 
+            name="jobGroup" 
+            column="JOB_GROUP"
+            type="java.lang.String"
+            not-null="true" 
+            unique="false" 
+            length="200"/>
+        
+        <property 
+            name="description" 
+            column="DESCRIPTION"
+            type="java.lang.String"
+            not-null="false" 
+            unique="false" 
+            length="250"/>
+        
+        <property 
+            name="nextFireTime" 
+            column="NEXT_FIRE_TIME"
+            type="java.lang.Long"
+            not-null="false" 
+            unique="false" 
+            length="13"/>
+        
+        <property 
+            name="prevFireTime" 
+            column="PREV_FIRE_TIME"
+            type="java.lang.Long"
+            not-null="false" 
+            unique="false" 
+            length="13"/>
+        
+        <property 
+            name="priority" 
+            column="PRIORITY"
+            type="java.lang.Long"
+            not-null="false" 
+            unique="false" 
+            length="13"/>
+        
+        <property 
+            name="triggerState" 
+            column="TRIGGER_STATE"
+            type="java.lang.String"
+            not-null="true" 
+            unique="false" 
+            length="16"/>
+        
+        <property 
+            name="triggerType" 
+            column="TRIGGER_TYPE"
+            type="java.lang.String"
+            not-null="true" 
+            unique="false" 
+            length="8"/>
+        
+        <property 
+            name="startTime" 
+            column="START_TIME"
+            type="java.lang.Long"
+            not-null="true" 
+            unique="false" 
+            length="13"/>
+        
+        <property 
+            name="endTime" 
+            column="END_TIME"
+            type="java.lang.Long"
+            not-null="false" 
+            unique="false" 
+            length="13"/>
+        
+        <property 
+            name="calendarName" 
+            column="CALENDAR_NAME"
+            type="java.lang.String"
+            not-null="false" 
+            unique="false" 
+            length="200"/>
+        
+        <property 
+            name="misfireInstr" 
+            column="MISFIRE_INSTR"
+            type="java.lang.Integer"
+            not-null="false" 
+            unique="false" 
+            length="2"/>
+        
+        <property 
+            name="jobData" 
+            column="JOB_DATA"
+            type="byte[]"
+            not-null="false" 
+            unique="false" 
+            length="4000"/>
+        
+        <!-- One-To-Many attributes -->
+        
+        <set name="qrtzSimpleTriggerss"
+             lazy="true"
+             inverse="true"
+             cascade="none"
+        >
+            <key>
+                <column name="SCHED_NAME"/>
+                <column name="TRIGGER_NAME"/>
+                <column name="TRIGGER_GROUP"/>
+            </key>
+            <one-to-many class="com.wa.framework.quartz.model.QrtzSimpleTriggers"/>
+        </set> 
+        
+        <set name="qrtzCronTriggerss"
+             lazy="true"
+             inverse="true"
+             cascade="none"
+        >
+            <key>
+                <column name="SCHED_NAME"/>
+                <column name="TRIGGER_NAME"/>
+                <column name="TRIGGER_GROUP"/>
+            </key>
+            <one-to-many class="com.wa.framework.quartz.model.QrtzCronTriggers"/>
+        </set> 
+        
+        <set name="qrtzSimpropTriggerss"
+             lazy="true"
+             inverse="true"
+             cascade="none"
+        >
+            <key>
+                <column name="SCHED_NAME"/>
+                <column name="TRIGGER_NAME"/>
+                <column name="TRIGGER_GROUP"/>
+            </key>
+            <one-to-many class="com.wa.framework.quartz.model.QrtzSimpropTriggers"/>
+        </set> 
+        
+        <set name="qrtzBlobTriggerss"
+             lazy="true"
+             inverse="true"
+             cascade="none"
+        >
+            <key>
+                <column name="SCHED_NAME"/>
+                <column name="TRIGGER_NAME"/>
+                <column name="TRIGGER_GROUP"/>
+            </key>
+            <one-to-many class="com.wa.framework.quartz.model.QrtzBlobTriggers"/>
+        </set> 
+
+        <!-- Many-To-One attributes -->
+        
+        <many-to-one
+            name="qrtzJobDetails"
+            not-null="false"
+            cascade="none"
+            update="false"
+            insert="false"
+            lazy="false"
+        >   
+            <column name="SCHED_NAME"/>
+            <column name="JOB_NAME"/>
+            <column name="JOB_GROUP"/>
+        </many-to-one> 
+
+    </class>
+</hibernate-mapping>
+

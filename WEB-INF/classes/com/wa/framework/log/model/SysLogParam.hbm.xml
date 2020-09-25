@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+
+<hibernate-mapping package="com.wa.framework.log.model">
+	<class
+		name="SysLogParam"
+		table="SYS_LOG_PARAM"
+	>
+		<meta attribute="sync-DAO">false</meta>
+		<id
+			name="id"
+			type="string"
+			column="SYS_LOG_PARAM_ID"
+		>
+			<generator class="uuid"/>
+		</id>
+
+		<property
+			name="paramName"
+			column="PARAM_NAME"
+			type="string"
+			not-null="true"
+			length="100"
+		/>
+		<property
+			name="paramValue"
+			column="PARAM_VALUE"
+			type="string"
+			not-null="false"
+			length="100"
+		/>
+		<many-to-one 
+			name="sysLogLog" 
+			column="SYS_LOG_LOG_ID" 
+			class="SysLogLog" 
+			not-null="true">
+        </many-to-one>
+
+
+	</class>	
+</hibernate-mapping>

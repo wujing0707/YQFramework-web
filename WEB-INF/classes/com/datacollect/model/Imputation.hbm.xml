@@ -1,0 +1,103 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+
+<hibernate-mapping package="com.datacollect.model">
+	<class
+		name="Imputation"
+		table="xy_guijixx" schema="dbo">
+		<meta attribute="sync-DAO">false</meta>
+		<id
+			name="id"
+			type="string"
+			column="ID"
+		>
+			<generator class="uuid"/>
+		</id>
+
+		<property
+			name="guijixinximingcheng"
+			column="GUIJIXINXIMINGCHENG"
+			type="string"
+		
+			length="100"
+		/>
+		<property
+			name="guijizhouqi"
+			column="GUIJIZHOUQI"
+			type="string"
+		
+			length="32"
+		/>
+		<property
+			name="gengxinriqi"
+			column="GENGXINRIQI"
+			type="java.sql.Date"
+			
+			length="7"
+		/>
+		<property
+			name="suosubumen"
+			column="SUOSUBUMEN"
+			type="string"
+		
+			length="32"
+		/>
+		<property
+			name="biaomingshiti"
+			column="BIAOMINGSHITI"
+			type="string"
+		
+			length="50"
+		/>
+		<property
+			name="sfqiyong"
+			column="SFQIYONG"
+			type="string"
+		
+			length="2"
+		/>
+		<property
+			name="chongfuliang"
+			column="CHONGFULIANG"
+			type="string"
+			
+			length="10"
+		/>
+	
+		<property
+			name="weiyanzhengliang"
+			column="WEIYANZHENGLIANG"
+			type="string"
+			
+			length="10"
+		/>
+		
+			<property
+			name="weiguanlianliang"
+			column="WEIGUANLIANLIANG"
+			type="string"
+			
+			length="10"
+		/>
+			<property
+			name="weipipeiliang"
+			column="WEIPIPEILIANG"
+			type="string"
+			
+			length="10"
+		/>
+		
+		<property
+			name="shujuzongliang"
+			column="SHUJUZONGLIANG"
+			type="string"
+			
+			length="10"
+		/>
+	
+		
+
+	</class>	
+</hibernate-mapping>

@@ -1,0 +1,70 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+
+<hibernate-mapping package="com.datacollect.model">
+	<class
+		name="Dptablefieldalbt"
+		table="DP_TABLE_FIELD_ALBT" schema="dbo">
+		<meta attribute="sync-DAO">false</meta>
+		<id
+			name="id"
+			type="string"
+			column="ID"
+		>
+			<generator class="uuid"/>
+		</id>
+
+		<property
+			name="albt_table_id"
+			column="albt_table_id"
+			type="string"
+			not-null="true"
+			length="50"
+		/>
+		<property
+			name="albt_field_name"
+			column="albt_field_name"
+			type="string"
+			not-null="true"
+			length="100"
+		/>
+		<property
+			name="temp_field_name"
+			column="temp_field_name"
+			type="string"
+			not-null="true"
+			length="32"
+		/>
+			<property
+			name="type"
+			column="type"
+			type="string"
+			not-null="true"
+			length="32"
+		/>
+			<property
+			name="is_split"
+			column="is_split"
+			type="string"
+			not-null="true"
+			length="32"
+		/>
+			<property
+			name="is_join"
+			column="is_join"
+			type="string"
+			not-null="true"
+			length="32"
+		/>
+			<property
+			name="is_only"
+			column="is_only"
+			type="string"
+			not-null="true"
+			length="32"
+		/>
+	
+	</class>	
+</hibernate-mapping>

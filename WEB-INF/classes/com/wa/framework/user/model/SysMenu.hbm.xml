@@ -1,0 +1,64 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+
+<hibernate-mapping package="com.wa.framework.user.model">
+	<class
+		name="SysMenu"
+		table="SYS_MENU"
+	>
+		<meta attribute="sync-DAO">false</meta>
+		<id
+			name="id"
+			type="string"
+			column="SYS_MENU_ID"
+		>
+			<generator class="uuid"/>
+		</id>
+
+		<property
+			name="parentId"
+			column="PARENT_ID"
+			type="string"
+			not-null="true"
+			length="50"
+		/>
+		<property
+			name="menuName"
+			column="MENU_NAME"
+			type="string"
+			not-null="true"
+			length="100"
+		/>
+		<property
+			name="menuUrl"
+			column="MENU_URL"
+			type="string"
+			not-null="true"
+			length="200"
+		/>
+		<property
+			name="menuIcon"
+			column="MENU_ICON"
+			type="string"
+			not-null="false"
+			length="100"
+		/>
+		<property
+			name="displayOrder"
+			column="DISPLAY_ORDER"
+			type="integer"
+			not-null="true"
+			length="4"
+		/>
+	
+
+		<set name="sysAccess" inverse="true" lazy="true">
+			<key column="SYS_MENU_ID"/>
+			<one-to-many class="SysAccess"/>
+		</set>
+
+
+	</class>	
+</hibernate-mapping>

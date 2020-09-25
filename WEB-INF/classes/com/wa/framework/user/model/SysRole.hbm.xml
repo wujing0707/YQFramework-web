@@ -1,0 +1,129 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+
+<hibernate-mapping package="com.wa.framework.user.model">
+	<class
+		name="SysRole"
+		table="SYS_ROLE"
+	>
+		<meta attribute="sync-DAO">false</meta>
+		<id
+			name="id"
+			type="string"
+			column="SYS_ROLE_ID"
+		>
+			<generator class="uuid"/>
+		</id>
+
+		<property
+			name="roleName"
+			column="ROLE_NAME"
+			type="string"
+			not-null="true"
+			length="100"
+		/>
+		<property
+			name="description"
+			column="DESCRIPTION"
+			type="string"
+			not-null="false"
+			length="500"
+		/>
+		<property
+			name="usersCount"
+			column="USERS_COUNT"
+			type="integer"
+			not-null="true"
+			length="4"
+		/>
+		<property
+			name="privilegesCount"
+			column="PRIVILEGES_COUNT"
+			type="integer"
+			not-null="true"
+			length="4"
+		/>
+		<property
+			name="departmentsCount"
+			column="DEPARTMENTS_COUNT"
+			type="integer"
+			not-null="true"
+			length="4"
+		/>
+		<property
+			name="createBy"
+			column="CREATE_BY"
+			type="string"
+			not-null="true"
+			length="100"
+		/>
+		<property
+			name="createDate"
+			column="CREATE_DATE"
+			type="timestamp"
+			not-null="true"
+			length="7"
+		/>
+		<property
+			name="updateBy"
+			column="UPDATE_BY"
+			type="string"
+			not-null="false"
+			length="100"
+		/>
+		<property
+			name="updateDate"
+			column="UPDATE_DATE"
+			type="timestamp"
+			not-null="false"
+			length="7"
+		/>
+		
+		<property
+			name="dataaccessid"
+			column="DATAACCESSID"
+			type="string"
+			not-null="false"
+			length="50"
+		/>
+		<property
+			name="department"
+			column="departmentid"
+			type="string"
+			not-null="false"
+			length="50"
+		/>
+	
+		<set
+			name="sysPrivileges"
+			table="SYS_ROLE_TO_PRIVILEGE"
+			cascade="none"
+			lazy="true"
+		>
+			<key column="SYS_ROLE_ID"/>
+			<many-to-many column="SYS_PRIVILEGE_ID" class="SysPrivilege"/>
+		</set>
+		<set
+			name="sysUsers"
+			table="SYS_USER_TO_ROLE"
+			cascade="none"
+			lazy="true"
+		>
+			<key column="SYS_ROLE_ID"/>
+			<many-to-many column="SYS_USER_ID" class="SysUser"/>
+		</set>
+		<set
+			name="sysDepartments"
+			table="SYS_DEPARTMENT_TO_ROLE"
+			cascade="none"
+			lazy="true"
+		>
+			<key column="SYS_ROLE_ID"/>
+			<many-to-many column="SYS_DEPARTMENT_ID" class="SysDepartment"/>
+		</set>
+
+
+	</class>	
+</hibernate-mapping>

@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!DOCTYPE taglib  
+PUBLIC "-//Sun Microsystems, Inc.//DTD JSP Tag Library 1.2//EN"  
+"http://java.sun.com/dtd/web-jsptaglibrary_1_2.dtd">
+<taglib>
+    <tlib-version>1.0</tlib-version>
+    <jsp-version>1.2</jsp-version>
+    <short-name>pb</short-name>
+        <display-name>Privilege Button</display-name>
+        <small-icon></small-icon>
+        <large-icon></large-icon>
+        <description>Privilege Button</description>
+
+        <tag>
+            <name>privilege</name>
+            <tag-class>com.wa.framework.user.controller.PrivilegeButton</tag-class>
+            <small-icon></small-icon>
+            <large-icon></large-icon>
+            <description></description>
+            <attribute>
+                <name>id</name>
+                <required>false</required>
+            </attribute>
+            <attribute>
+                <name>href</name>
+                <required>false</required>
+            </attribute>
+            <attribute>
+                <name>onclick</name>
+                <required>false</required>
+            </attribute>
+            <attribute>
+                <name>dataOptions</name>
+                <required>false</required>
+            </attribute>
+            <attribute>
+                <name>key</name>
+                <required>true</required>
+            </attribute>
+        </tag>
+        <tag>
+            <name>excelExport</name>
+            <tag-class>com.wa.framework.user.controller.ExportButton</tag-class>
+            <small-icon></small-icon>
+            <large-icon></large-icon>
+            <description></description>
+            <attribute>
+                <name>id</name>
+                <required>false</required>
+            </attribute>
+            <attribute>
+                <name>gridId</name>
+                <required>true</required>
+            </attribute>
+            <attribute>
+                <name>exportUrl</name>
+                <required>true</required>
+            </attribute>
+        </tag>
+</taglib>

@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+
+<hibernate-mapping package="com.datacollect.model">
+	<class name="Complain" table="SYS_COMPLAIN" schema="dbo">
+		<meta attribute="sync-DAO">false</meta>
+		<id name="id" type="string" column="ID">
+			<generator class="uuid" />
+		</id>
+
+		<property name="name" column="NAME" type="string" length="50" />
+
+		<property name="phoneNumber" column="PHONE_NUMBER" type="string"
+
+			length="50" />
+
+		<property name="idNumber" column="ID_NUMBER" type="string"
+
+			length="50" />
+
+		<property name="email" column="EMAIL" type="string" length="50" />
+		<property name="company" column="COMPANY" type="string"
+
+			length="50" />
+
+		<property name="address" column="ADDRESS" type="string"
+
+			length="50" />
+
+		<property name="subject" column="SUBJECT" type="string"
+
+			length="50" />
+
+		<property name="content" column="CONTENT" type="string"
+
+			length="500" />
+
+		<property name="type" column="TYPE" type="string" length="10" />
+
+		<property name="complainStatus" column="COMPLAIN_STATUS" type="string" length="10" />
+		<property name="handleStatus" column="HANDLE_STATUS" type="string" length="10" />
+		<property name="complainTime" column="COMPLAIN_TIME" type="timestamp" length="10" />
+		<property name="handleDep" column="DEPARTMENT_ID" type="string" length="50" />
+
+	</class>
+</hibernate-mapping>

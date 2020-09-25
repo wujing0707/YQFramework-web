@@ -1,0 +1,67 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+
+<hibernate-mapping package="com.datacollect.model">
+	<class
+		name="Dataaccess"
+		table="sys_dataaccess" schema="dbo">
+		<meta attribute="sync-DAO">false</meta>
+		<id
+			name="dataaccessId"
+			type="string"
+			column="DATAACCESS_ID"
+		>
+			<generator class="uuid"/>
+		</id>
+
+		<property
+			name="dataaccessName"
+			column="DATAACCESS_NAME"
+			type="string"
+		
+			length="50"
+		/>
+		
+		<property
+			name="createUser"
+			column="CREATEUSER"
+			type="string"
+		
+			length="50"
+		/>
+		
+		<property
+			name="createTime"
+			column="CREATETIME"
+			type="timestamp"
+		
+		/>
+		
+		<property
+			name="updateUser"
+			column="UPDATEUSER"
+			type="string"
+		
+			length="50"
+		/>
+		
+		<property
+			name="updateTime"
+			column="UPDATETIME"
+			type="timestamp"
+		
+		/>
+		<property
+			name="department"
+			column="DEPARTMENT"
+			type="string"
+		
+			length="50"
+		/>
+	
+		
+
+	</class>	
+</hibernate-mapping>

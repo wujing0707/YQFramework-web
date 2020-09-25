@@ -1,0 +1,44 @@
+﻿@charset "utf-8";
+/* CSS Document */
+.rela{ position:relative;}
+.logBG{ background:#001839;}
+.logBox{ background:url(../images/logBG.jpg) 0px 0px no-repeat; background-position:center -80px ; height:800px; width:1000px; margin:0px auto; position:relative;}
+.logBox table{ position:absolute;top:248px;left:307px; z-index:2;}/*top:227px;left:353px;*/
+.logBox table td{ height:34px; line-height:34px;}
+.logInput1Box,.logInput2Box,.logInput3Box,.logInput4Box,.logInput5Box,.logInput6Box,.logInput7Box{ width:210px; height:34px; padding-left:70px; float:left;}
+.logInput1Box{ background:url(../images/logInput.jpg) 0px 0px no-repeat;}/*用户名*/
+.logInput2Box{ background:url(../images/logInput.jpg) 0px -34px no-repeat;}/*密码*/
+.logInput3Box{ background:url(../images/logInput.jpg) 0px -68px no-repeat;}/*验证码*/
+.logInput4Box{ background:url(../images/logInput.jpg) 0px -102px no-repeat;}/*手机*/
+.logInput5Box{ background:url(../images/logInput.jpg) 0px -136px no-repeat;}/*邮箱*/
+.logInput6Box{ background:url(../images/logInput.jpg) 0px -170px no-repeat;}/*新密码*/
+.logInput7Box{ background:url(../images/logInput.jpg) 0px -204px no-repeat;}/*再输一次*/
+.logBox table td .logInput{ border:none; background:transparent;height:32px; font:bold 14px/32px "微软雅黑","宋体",Arial; display:block; float:left; padding-right:5px; color:#072068;}
+.logInput1{ width:205px;}
+.logInput2{ width:171px;}
+.logInput3{ width:110px;}
+a#logForget:link,a#logForget:visited,a#logForget:hover{ display:block; width:33px; height:32px; float:right;}
+a#logForget:link,a#logForget:visited{ background:url(../images/logForget.gif) 0px 1px no-repeat;}
+a#logForget:hover{background:url(../images/logForget.gif) 0px -33px no-repeat; }
+#yzm{ cursor:pointer; display:block; float:left; position:relative;top:3px;left:2px;}
+.logTline{ height:21px !important; line-height:21px !important;}
+a#btnLogin:link,a#btnLogin:hover,a#btnLogin:visited{ display:block; width:141px; height:161px; background:url(../images/btnLogin.jpg) 0px -161px no-repeat;position:absolute; left: 631px; top: 240px; }
+a#btnLogin:hover{ background:url(../images/btnLogin.jpg) 0px 0px no-repeat; }
+.logLB{ width:276px; height:69px; position:absolute; top:420px; left:237px; z-index:1; }
+#LogBGlb{ background:url(../images/LogLB.jpg) 0px 0px no-repeat;}
+#FindBGlb{ background:url(../images/LogLB.jpg) 0px -70px no-repeat;}
+.step{ width:163px; height:251px; position:absolute; z-index:1; top:153px; left:264px;}
+#step1{ background:url(../images/step.jpg) 0px 0px no-repeat;}
+#step2{ background:url(../images/step.jpg) -164px 0px no-repeat;}
+#step3{ background:url(../images/step.jpg) -328px 0px no-repeat;}
+#step4{ background:url(../images/step.jpg) -492px 0px no-repeat;}
+.btnStep,.btnStep1{ width:280px; height:35px; font:14px/35px "微软雅黑","宋体",Arial; color:#fff; background:url(../images/logInput.jpg) 0px -238px no-repeat; border:none; cursor:pointer;}
+.btnStep1{ background:url(../images/logInput.jpg) 0px -273px no-repeat;}
+.logRadio{ display:block; float:left; position:absolute; top:9px; left:-20px; margin-right:10px;}
+.prompt1{position:absolute;top:220px; left:308px;}
+.prompt2{position:absolute;top:220px; left:468px;}
+/*---------------------发送验证码按钮开始----------------------------------*/
+.btn_sendyzm,.btn_sendyzm1{ width:76px;height:31px; position:absolute;right:0px; top:2px; line-height:31px; border:none; cursor:pointer; background:url(../images/logSendyzm.gif) 0px 0px no-repeat;}
+.btn_sendyzm1{ background:url(../images/logSendyzm.gif) 0px -34px no-repeat;}
+.inputyzm{ background:#1062ae; border:1px solid #0e55a7;height:22px; line-height:22px; color:#fff; width:268px; padding:0px 5px;}
+/*---------------------发送验证码按钮结束----------------------------------*/

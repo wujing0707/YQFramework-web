@@ -1,0 +1,51 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+
+<hibernate-mapping package="com.wa.framework.user.model">
+	<class
+		name="SysAccess"
+		table="SYS_ACCESS"
+	>
+		<meta attribute="sync-DAO">false</meta>
+		<id
+			name="id"
+			type="string"
+			column="SYS_ACCESS_ID"
+		>
+			<generator class="uuid"/>
+		</id>
+
+		<property
+			name="url"
+			column="URL"
+			type="string"
+			not-null="true"
+			length="200"
+		/>
+		<property
+			name="description"
+			column="DESCRIPTION"
+			type="string"
+			not-null="false"
+			length="500"
+		/>
+		<many-to-one
+			name="sysPrivilege"
+			column="SYS_PRIVILEGE_ID"
+			class="SysPrivilege"
+			not-null="true"
+		>
+		</many-to-one>
+		<many-to-one
+			name="sysMenu"
+			column="SYS_MENU_ID"
+			class="SysMenu"
+			not-null="true"
+		>
+		</many-to-one>
+
+
+	</class>	
+</hibernate-mapping>

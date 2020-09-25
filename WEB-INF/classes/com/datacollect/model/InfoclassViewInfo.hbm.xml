@@ -1,0 +1,56 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+
+<hibernate-mapping package="com.datacollect.model">
+	<class
+		name="InfoclassViewInfo"
+		table="SYS_INFOCLASS_VIEWINFO" schema="dbo">
+		<meta attribute="sync-DAO">false</meta>
+<id
+			name="id"
+			type="string"
+			column="ID"
+		>
+			<generator class="uuid"/>
+		</id>
+		<property
+			name="viewname"
+			column="VIEWNAME"
+			type="string"
+			length="50"
+		/>
+		
+		<property
+			name="field"
+			column="FIELD"
+			type="string"
+			length="50"
+		/>
+		
+		<property
+			name="fieldname"
+			column="FIELDNAME"
+			type="string"
+			length="50"
+		
+		/>
+		<property
+			name="deptfrom"
+			column="DEPTFROM"
+			type="string"
+			length="1000"
+		
+		/>
+		<property
+			name="createtime"
+			column="CREATETIME"
+			type="timestamp"
+		
+		/>
+	
+		
+
+	</class>	
+</hibernate-mapping>

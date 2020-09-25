@@ -1,0 +1,76 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+
+<hibernate-mapping package="com.wa.framework.log.model">
+	<class
+		name="SystemLog"
+		table="SYS_LOG"
+	>
+		<meta attribute="sync-DAO">false</meta>
+		<id
+			name="id"
+			type="string"
+			column="SYS_LOG_ID"
+		>
+			<generator class="uuid"/>
+		</id>
+
+		<property
+			name="userName"
+			column="USER_NAME"
+			type="string"
+		/>
+		<property
+			name="createDateBy"
+			column="CREATE_DATE_BY"
+			type="java.util.Date"
+		/>
+		<property
+			name="requestIp"
+			column="IP"
+			type="string"
+		/>
+		<property
+			name="type"
+			column="TYPE"
+			type="string"
+		/>
+		<property
+			name="method"
+			column="METHOD"
+			type="string"
+		/>
+		<property
+			name="description"
+			column="DESCRIPTION"
+			type="string"
+		/>
+		<property
+			name="exceptionCode"
+			column="EXCEPTIONCODE"
+			type="string"
+		/>
+		<property
+			name="exceptionDetail"
+			column="EXCEPTIONDETAIL"
+			type="string"
+		/>
+		<property
+			name="department"
+			column="DEPARTMENT"
+			type="string"
+		/>
+		<property
+			name="realName"
+			column="REAL_NAME"
+			type="string"
+		/>
+		<property
+			name="params"
+			column="PARAMS"
+			type="string"
+		/>
+	</class>	
+</hibernate-mapping>

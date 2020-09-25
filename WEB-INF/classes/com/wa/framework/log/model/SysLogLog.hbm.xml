@@ -1,0 +1,60 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+
+<hibernate-mapping package="com.wa.framework.log.model">
+	<class
+		name="SysLogLog"
+		table="SYS_LOG_LOG"
+	>
+		<meta attribute="sync-DAO">false</meta>
+		<id
+			name="id"
+			type="string"
+			column="SYS_LOG_LOG_ID"
+		>
+			<generator class="uuid"/>
+		</id>
+
+		<property
+			name="accessUrl"
+			column="ACCESS_URL"
+			type="string"
+			not-null="true"
+			length="500"
+		/>
+		<property
+			name="accessName"
+			column="ACCESS_NAME"
+			type="string"
+			not-null="false"
+			length="500"
+		/>
+		<property
+			name="logDate"
+			column="LOG_DATE"
+			type="java.util.Date"
+			not-null="true"
+		/>
+		<property
+			name="username"
+			column="USERNAME"
+			type="string"
+			not-null="false"
+			length="100"
+		/>
+		<property
+			name="ip"
+			column="IP"
+			type="string"
+			not-null="true"
+			length="20"
+		/>
+		<set name="logParams" inverse="true" lazy="true">
+			<key column="SYS_LOG_LOG_ID"></key>
+			<one-to-many class="SysLogParam"></one-to-many>
+		</set>
+
+	</class>	
+</hibernate-mapping>

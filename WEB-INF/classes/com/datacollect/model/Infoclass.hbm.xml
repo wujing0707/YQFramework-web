@@ -1,0 +1,98 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+
+<hibernate-mapping package="com.datacollect.model">
+	<class
+		name="Infoclass"
+		table="sys_infoclass" schema="dbo">
+		<meta attribute="sync-DAO">false</meta>
+		<id
+			name="id"
+			type="string"
+			column="ID"
+		>
+			<generator class="uuid"/>
+		</id>
+		
+		<property
+			name="bigservicename"
+			column="BIGSERVICENAME"
+			type="string"
+		
+			length="50"
+		/>
+
+		<property
+			name="servicename"
+			column="SERVICENAME"
+			type="string"
+		
+			length="50"
+		/>
+		
+		<property
+			name="entityname"
+			column="ENTITYNAME"
+			type="string"
+		
+			length="50"
+		/>
+		
+		<property
+			name="sfqiyong"
+			column="SFQIYONG"
+			type="string"
+		
+			length="4"
+		/>
+		
+		<property
+			name="createUser"
+			column="CREATEUSER"
+			type="string"
+		
+			length="50"
+		/>
+		
+		<property
+			name="createTime"
+			column="CREATETIME"
+			type="timestamp"
+		
+		/>
+		
+		<property
+			name="updateUser"
+			column="UPDATEUSER"
+			type="string"
+		
+			length="50"
+		/>
+		
+		<property
+			name="updateTime"
+			column="UPDATETIME"
+			type="timestamp"
+		
+		/>
+		
+		<property
+			name="isok"
+			column="isok"
+			type="string"
+		
+			length="2"
+		/>
+	   <property
+			name="sortno"
+			column="sortno"
+			type="string"
+		
+			length="2"
+		/>
+	
+
+	</class>	
+</hibernate-mapping>

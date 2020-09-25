@@ -1,0 +1,106 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+
+<hibernate-mapping package="com.datacollect.model">
+	<class
+		name="CreditBaseVerification"
+		table="XY_XYHCM" schema="dbo">
+		<meta attribute="sync-DAO">false</meta>
+<id
+			name="id"
+			type="string"
+			column="id"
+		>
+			<generator class="uuid"/>
+		</id>
+		<property
+			name="searchtype"
+			column="searchtype"
+			type="string"
+			length="200"
+		/>
+		
+		<property
+			name="searchqymc"
+			column="searchqymc"
+			type="string"
+			length="200"
+		/>
+		
+		<property
+			name="searchtime"
+			column="searchtime"
+			type="timestamp"
+			length="10"
+		
+		/>
+		
+		<property
+			name="checkcode"
+			column="checkcode"
+			type="string"
+			length="200"
+		/>
+		
+		<property
+			name="action"
+			column="action"
+			type="string"
+			length="200"
+		/>
+		<property
+			name="validtime"
+			column="validtime"
+			type="string"
+			length="200"
+		/>
+		 
+		 
+		<property
+			name="zzjgdm"
+			column="zzjgdm"
+			type="string"
+			length="200"
+		/>
+	
+		<property
+			name="gszch"
+			column="gszch"
+			type="string"
+			length="200"
+		/>
+		 
+		 
+		<property
+			name="qymc"
+			column="qymc"
+			type="string"
+			length="200"
+		/>
+		
+		<property
+			name="zdrqxm"
+			column="zdrqxm"
+			type="string"
+			length="200"
+		/>	
+			
+		<property
+			name="sfzhm"
+			column="sfzhm"
+			type="string"
+			length="200"
+		/>
+		 
+		 
+		<property
+			name="creattime"
+			column="creattime"
+			type="timestamp"
+			length="10"
+		/>				
+
+	</class>	
+</hibernate-mapping>

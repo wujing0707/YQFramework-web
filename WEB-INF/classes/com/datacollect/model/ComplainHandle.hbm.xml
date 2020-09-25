@@ -1,0 +1,68 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+
+<hibernate-mapping package="com.datacollect.model">
+	<class
+		name="ComplainHandle"
+		table="SYS_COMPLAIN_HANDLE" schema="dbo">
+		<meta attribute="sync-DAO">false</meta>
+		<id name="id" type="string" column="ID">
+			<generator class="uuid" />
+		</id>
+		<property
+			name="depId"
+			type="string"
+			column="DEPARTMENT_ID"
+			length="50"
+		/>
+		<property
+			name="complainId"
+			column="COMPLAIN_ID"
+			type="string"
+		
+			length="50"
+		/>
+		
+		<property
+			name="handledBy"
+			column="HANDLED_BY"
+			type="string"
+		
+			length="50"
+		/>
+		
+		<property
+			name="content"
+			column="HANDLE_CONTENT"
+			type="string"
+		
+			length="500"
+		/>
+		<property name="handleTime" column="HANDLE_TIME" type="timestamp" length="10"/>
+		
+		<property
+			name="fileName"
+			column="HANDLE_FILE_NAME"
+			type="string"
+		
+			length="100"
+		/>
+		<property
+			name="filePath"
+			column="FILE_PATH"
+			type="string"
+		
+			length="100"
+		/>
+			<property
+			name="type"
+			column="TYPE"
+			type="string"
+		
+			length="10"
+		/>
+		
+	</class>	
+</hibernate-mapping>

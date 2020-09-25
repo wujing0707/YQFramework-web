@@ -1,0 +1,47 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+
+<hibernate-mapping package="com.datacollect.model">
+	<class
+		name="AccessTableInfo"
+		table="SYS_DATAACCESS_TO_TABLE" schema="dbo">
+		<meta attribute="sync-DAO">false</meta>
+		<id
+			name="id"
+			type="string"
+			column="ID"
+			length="50"
+		>
+			<generator class="uuid"/>
+		</id>
+
+		<property
+			name="accessId"
+			column="DATAACCESS_ID"
+			type="string"
+		
+			length="50"
+		/>
+		
+		<property
+			name="tableName"
+			column="TABLENAME"
+			type="string"
+		
+			length="50"
+		/>
+		
+		<property
+			name="fieldInfo"
+			column="FIELDINFO"
+			type="string"
+		
+			length="2000"
+		/>
+	
+		
+
+	</class>	
+</hibernate-mapping>

@@ -1,0 +1,50 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.wa.framework.quartz.model">
+    <class name="QrtzCronTriggers" table="QRTZ_CRON_TRIGGERS">
+
+        
+        <composite-id name="id" class="QrtzCronTriggersId">
+            <key-property name="schedName" type="java.lang.String" column="SCHED_NAME"/>
+            <key-property name="triggerName" type="java.lang.String" column="TRIGGER_NAME"/>
+            <key-property name="triggerGroup" type="java.lang.String" column="TRIGGER_GROUP"/>
+        </composite-id>
+        
+        
+        <property 
+            name="cronExpression" 
+            column="CRON_EXPRESSION"
+            type="java.lang.String"
+            not-null="true" 
+            unique="false" 
+            length="120"/>
+        
+        <property 
+            name="timeZoneId" 
+            column="TIME_ZONE_ID"
+            type="java.lang.String"
+            not-null="false" 
+            unique="false" 
+            length="80"/>
+        
+        <!-- One-To-Many attributes -->
+
+        <!-- Many-To-One attributes -->
+        
+        <many-to-one
+            name="qrtzTriggers"
+            not-null="false"
+            cascade="none"
+            update="false"
+            insert="false"
+        >   
+            <column name="SCHED_NAME"/>
+            <column name="TRIGGER_NAME"/>
+            <column name="TRIGGER_GROUP"/>
+        </many-to-one> 
+
+    </class>
+</hibernate-mapping>
+

@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.wa.framework.quartz.model">
+    <class name="QrtzCalendars" table="QRTZ_CALENDARS">
+
+        
+        <composite-id name="id" class="QrtzCalendarsId">
+            <key-property name="schedName" type="java.lang.String" column="SCHED_NAME"/>
+            <key-property name="calendarName" type="java.lang.String" column="CALENDAR_NAME"/>
+        </composite-id>
+        
+        
+        <property 
+            name="calendar" 
+            column="CALENDAR"
+            type="byte[]"
+            not-null="true" 
+            unique="false" 
+            length="4000"/>
+        
+        <!-- One-To-Many attributes -->
+
+        <!-- Many-To-One attributes -->
+
+    </class>
+</hibernate-mapping>
+

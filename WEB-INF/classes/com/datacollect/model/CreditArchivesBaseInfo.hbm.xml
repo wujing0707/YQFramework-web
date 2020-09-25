@@ -1,0 +1,70 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+
+<hibernate-mapping package="com.datacollect.model">
+	<class
+		name="CreditArchivesBaseInfo"
+		table="JCXX_VIEW" schema="dbo">
+		<meta attribute="sync-DAO">false</meta>
+<id
+			name="id"
+			type="string"
+			column="id"
+		>
+			<generator class="uuid"/>
+		</id>
+		<property
+			name="zzjgdm"
+			column="zzjgdm"
+			type="string"
+			length="50"
+		/>
+		
+		<property
+			name="qymc"
+			column="qymc"
+			type="string"
+			length="50"
+		/>
+		
+		<property
+			name="gszch"
+			column="gszch"
+			type="string"
+			length="50"
+		
+		/>
+		
+		<property
+			name="fddbr"
+			column="fddbr"
+			type="string"
+			length="50"
+		/>
+		<!-- 
+		<property
+			name="zcdz"
+			column="zcdz"
+			type="string"
+			length="50"
+		/>
+		<property
+			name="jyfw"
+			column="jyfw"
+			type="string"
+			length="50"
+		/>
+		 -->
+		<property
+			name="sshy"
+			column="sshy"
+			type="string"
+			length="50"
+		/>
+	
+		
+
+	</class>	
+</hibernate-mapping>

@@ -1,0 +1,70 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+
+<hibernate-mapping package="com.datacollect.model">
+	<class
+		name="Maintain"
+		table="XY_GJZDYS" schema="dbo">
+		<meta attribute="sync-DAO">false</meta>
+		<id
+			name="id"
+			type="string"
+			column="ID"
+		>
+			<generator class="uuid"/>
+		</id>
+
+		<property
+			name="guijixinxiid"
+			column="GUIJIXINXIID"
+			type="string"
+			not-null="true"
+			length="50"
+		/>
+		<property
+			name="excelziduan"
+			column="EXCELZIDUAN"
+			type="string"
+			not-null="true"
+			length="100"
+		/>
+		<property
+			name="ziduanming"
+			column="ZIDUANMING"
+			type="string"
+			not-null="true"
+			length="32"
+		/>
+		<property
+			name="datetype"
+			column="DATATYPE"
+			type="string"
+			not-null="true"
+			length="32"
+		/>
+		<property
+			name="length"
+			column="LENGTH"
+			type="string"
+			not-null="true"
+			length="10"
+		/>
+		<property
+			name="isnull"
+			column="ISNULL"
+			type="string"
+			
+			length="2"
+		/>
+		<property
+			name="isopen"
+			column="ISOPEN"
+			type="string"
+			
+			length="2"
+		/>
+	
+	</class>	
+</hibernate-mapping>

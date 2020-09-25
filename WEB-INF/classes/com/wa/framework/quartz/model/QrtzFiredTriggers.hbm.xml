@@ -1,0 +1,101 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.wa.framework.quartz.model">
+    <class name="QrtzFiredTriggers" table="QRTZ_FIRED_TRIGGERS">
+
+        
+        <composite-id name="id" class="QrtzFiredTriggersId">
+            <key-property name="schedName" type="java.lang.String" column="SCHED_NAME"/>
+            <key-property name="entryId" type="java.lang.String" column="ENTRY_ID"/>
+        </composite-id>
+        
+        
+        <property 
+            name="triggerName" 
+            column="TRIGGER_NAME"
+            type="java.lang.String"
+            not-null="true" 
+            unique="false" 
+            length="200"/>
+        
+        <property 
+            name="triggerGroup" 
+            column="TRIGGER_GROUP"
+            type="java.lang.String"
+            not-null="true" 
+            unique="false" 
+            length="200"/>
+        
+        <property 
+            name="instanceName" 
+            column="INSTANCE_NAME"
+            type="java.lang.String"
+            not-null="true" 
+            unique="false" 
+            length="200"/>
+        
+        <property 
+            name="firedTime" 
+            column="FIRED_TIME"
+            type="java.lang.Long"
+            not-null="true" 
+            unique="false" 
+            length="13"/>
+        
+        <property 
+            name="priority" 
+            column="PRIORITY"
+            type="java.lang.Long"
+            not-null="true" 
+            unique="false" 
+            length="13"/>
+        
+        <property 
+            name="state" 
+            column="STATE"
+            type="java.lang.String"
+            not-null="true" 
+            unique="false" 
+            length="16"/>
+        
+        <property 
+            name="jobName" 
+            column="JOB_NAME"
+            type="java.lang.String"
+            not-null="false" 
+            unique="false" 
+            length="200"/>
+        
+        <property 
+            name="jobGroup" 
+            column="JOB_GROUP"
+            type="java.lang.String"
+            not-null="false" 
+            unique="false" 
+            length="200"/>
+        
+        <property 
+            name="isNonconcurrent" 
+            column="IS_NONCONCURRENT"
+            type="java.lang.String"
+            not-null="false" 
+            unique="false" 
+            length="1"/>
+        
+        <property 
+            name="requestsRecovery" 
+            column="REQUESTS_RECOVERY"
+            type="java.lang.String"
+            not-null="false" 
+            unique="false" 
+            length="1"/>
+        
+        <!-- One-To-Many attributes -->
+
+        <!-- Many-To-One attributes -->
+
+    </class>
+</hibernate-mapping>
+

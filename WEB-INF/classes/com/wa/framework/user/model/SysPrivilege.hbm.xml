@@ -1,0 +1,113 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+
+<hibernate-mapping package="com.wa.framework.user.model">
+	<class
+		name="SysPrivilege"
+		table="SYS_PRIVILEGE"
+	>
+		<meta attribute="sync-DAO">false</meta>
+		<id
+			name="id"
+			type="string"
+			column="SYS_PRIVILEGE_ID"
+		>
+			<generator class="uuid"/>
+		</id>
+
+		<property
+			name="privilegeCode"
+			column="PRIVILEGE_CODE"
+			type="string"
+			not-null="false"
+			length="100"
+		/>
+		<property
+			name="privilegeName"
+			column="PRIVILEGE_NAME"
+			type="string"
+			not-null="false"
+			length="100"
+		/>
+		<property
+			name="description"
+			column="DESCRIPTION"
+			type="string"
+			not-null="false"
+			length="500"
+		/>
+		<property
+			name="usersCount"
+			column="USERS_COUNT"
+			type="integer"
+			not-null="true"
+			length="4"
+		/>
+		<property
+			name="allUsersCount"
+			column="ALL_USERS_COUNT"
+			type="integer"
+			not-null="true"
+			length="4"
+		/>
+		<property
+			name="rolesCount"
+			column="ROLES_COUNT"
+			type="integer"
+			not-null="true"
+			length="4"
+		/>
+		<property
+			name="departmentsCount"
+			column="DEPARTMENTS_COUNT"
+			type="integer"
+			not-null="true"
+			length="4"
+		/>
+		<property
+			name="displayOrder"
+			column="DISPLAY_ORDER"
+			type="integer"
+			not-null="true"
+			length="4"
+		/>
+	
+
+		<set name="sysAccess" inverse="true" lazy="true">
+			<key column="SYS_PRIVILEGE_ID"/>
+			<one-to-many class="SysAccess"/>
+		</set>
+	
+		<set
+			name="sysRoles"
+			table="SYS_ROLE_TO_PRIVILEGE"
+			cascade="none"
+			lazy="true"
+		>
+			<key column="SYS_PRIVILEGE_ID"/>
+			<many-to-many column="SYS_ROLE_ID" class="SysRole"/>
+		</set>
+		<set
+			name="sysUsers"
+			table="SYS_USER_TO_PRIVILEGE"
+			cascade="none"
+			lazy="true"
+		>
+			<key column="SYS_PRIVILEGE_ID"/>
+			<many-to-many column="SYS_USER_ID" class="SysUser"/>
+		</set>
+		<set
+			name="sysDepartments"
+			table="SYS_DEPARTMENT_TO_PRIVILEGE"
+			cascade="none"
+			lazy="true"
+		>
+			<key column="SYS_PRIVILEGE_ID"/>
+			<many-to-many column="SYS_DEPARTMENT_ID" class="SysDepartment"/>
+		</set>
+
+
+	</class>	
+</hibernate-mapping>

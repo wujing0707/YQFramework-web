@@ -1,0 +1,177 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+
+<hibernate-mapping package="com.wa.framework.user.model">
+	<class
+		name="SysUser"
+		table="SYS_USER"
+	>
+		<meta attribute="sync-DAO">false</meta>
+		<id
+			name="id"
+			type="string"
+			column="SYS_USER_ID"
+		>
+			<generator class="uuid"/>
+		</id>
+
+	<property
+			name="zwtid"
+			column="ZWTID"
+			type="string"
+			not-null="true"
+			length="50"
+		/>
+
+
+		<property
+			name="username"
+			column="USERNAME"
+			type="string"
+			not-null="true"
+			length="100"
+		/>
+		<property
+			name="password"
+			column="PASSWORD"
+			type="string"
+			not-null="true"
+			length="100"
+		/>
+		<property
+			name="state"
+			column="STATE"
+			type="string"
+			not-null="true"
+			length="4"
+		/>
+		<property
+			name="enabled"
+			column="ENABLED"
+			type="boolean"
+			not-null="true"
+			length="1"
+		/>
+		<property
+			name="rolesCount"
+			column="ROLES_COUNT"
+			type="integer"
+			not-null="true"
+			length="4"
+		/>
+		<property
+			name="privilegesCount"
+			column="PRIVILEGES_COUNT"
+			type="integer"
+			not-null="true"
+			length="4"
+		/>
+		<property
+			name="createBy"
+			column="CREATE_BY"
+			type="string"
+			not-null="true"
+			length="100"
+		/>
+		<property
+			name="createDate"
+			column="CREATE_DATE"
+			type="timestamp"
+			not-null="true"
+			length="7"
+		/>
+		<property
+			name="updateBy"
+			column="UPDATE_BY"
+			type="string"
+			not-null="false"
+			length="100"
+		/>
+		<property
+			name="updateDate"
+			column="UPDATE_DATE"
+			type="timestamp"
+			not-null="false"
+			length="7"
+		/>
+		<property
+			name="gender"
+			column="GENDER"
+			type="boolean"
+			not-null="false"
+			length="1"
+		/>
+		<property
+			name="realName"
+			column="REAL_NAME"
+			type="string"
+			not-null="false"
+			length="15"
+		/>
+		<property
+			name="idCard"
+			column="ID_CARD"
+			type="string"
+			not-null="false"
+			length="20"
+		/>
+		<property
+			name="address"
+			column="ADDRESS"
+			type="string"
+			not-null="false"
+			length="50"
+		/>
+		<property
+			name="email"
+			column="EMAIL"
+			type="string"
+			not-null="false"
+			length="50"
+		/>
+		<property
+			name="phoneNumber"
+			column="PHONE_NUMBER"
+			type="string"
+			not-null="false"
+			length="50"
+		/>
+		
+		<many-to-one
+			name="sysDepartment"
+			column="SYS_DEPARTMENT_ID"
+			class="SysDepartment"
+			not-null="true"
+		>
+		</many-to-one>
+	
+		<set
+			name="sysRoles"
+			table="SYS_USER_TO_ROLE"
+			cascade="none"
+			lazy="true"
+		>
+			<key column="SYS_USER_ID"/>
+			<many-to-many column="SYS_ROLE_ID" class="SysRole"/>
+		</set>
+		<set
+			name="sysPrivileges"
+			table="SYS_USER_TO_PRIVILEGE"
+			cascade="none"
+			lazy="true"
+		>
+			<key column="SYS_USER_ID"/>
+			<many-to-many column="SYS_PRIVILEGE_ID" class="SysPrivilege"/>
+		</set>
+		<property
+			name="departmentId"
+			column="DEPARTMENTID"
+			type="string"
+			not-null="false"
+			length="10"
+		/>
+
+	</class>	
+</hibernate-mapping>

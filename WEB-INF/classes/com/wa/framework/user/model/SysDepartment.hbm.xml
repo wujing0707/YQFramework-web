@@ -1,0 +1,103 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+
+<hibernate-mapping package="com.wa.framework.user.model">
+	<class
+		name="SysDepartment"
+		table="SYS_DEPARTMENT"
+	>
+		<meta attribute="sync-DAO">false</meta>
+		<id
+			name="id"
+			type="string"
+			column="SYS_DEPARTMENT_ID"
+		>
+			<generator class="uuid"/>
+		</id>
+
+		<property
+			name="departmentName"
+			column="DEPARTMENT_NAME"
+			type="string"
+			not-null="true"
+			length="100"
+		/>
+		<property
+			name="description"
+			column="DESCRIPTION"
+			type="string"
+			not-null="true"
+			length="100"
+		/>
+		<property
+			name="adminUsername"
+			column="ADMIN_USERNAME"
+			type="string"
+			not-null="false"
+			length="100"
+		/>
+		<property
+			name="parentId"
+			column="PARENT_ID"
+			type="string"
+			not-null="false"
+			length="50"
+		/>
+		<property
+			name="createBy"
+			column="CREATE_BY"
+			type="string"
+			not-null="true"
+			length="100"
+		/>
+		<property
+			name="createDate"
+			column="CREATE_DATE"
+			type="timestamp"
+			not-null="true"
+			length="7"
+		/>
+		<property
+			name="updateBy"
+			column="UPDATE_BY"
+			type="string"
+			not-null="false"
+			length="100"
+		/>
+		<property
+			name="updateDate"
+			column="UPDATE_DATE"
+			type="timestamp"
+			not-null="false"
+			length="7"
+		/>
+		
+		<set name="sysUsers" inverse="true" lazy="true">
+			<key column="SYS_DEPARTMENT_ID"/>
+			<one-to-many class="SysUser"/>
+		</set>
+	
+		<set
+			name="sysRoles"
+			table="SYS_DEPARTMENT_TO_ROLE"
+			cascade="none"
+			lazy="true"
+		>
+			<key column="SYS_DEPARTMENT_ID"/>
+			<many-to-many column="SYS_ROLE_ID" class="SysRole"/>
+		</set>
+		<set
+			name="sysPrivileges"
+			table="SYS_DEPARTMENT_TO_PRIVILEGE"
+			cascade="none"
+			lazy="true"
+		>
+			<key column="SYS_DEPARTMENT_ID"/>
+			<many-to-many column="SYS_PRIVILEGE_ID" class="SysPrivilege"/>
+		</set>
+
+
+	</class>	
+</hibernate-mapping>

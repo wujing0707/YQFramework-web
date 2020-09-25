@@ -1,0 +1,105 @@
+@charset "utf-8";
+/* CSS Document */
+* { margin:0px; padding:0px; }
+body { line-height:180%; font:12px Arial, "宋体"; margin:0px; padding:0px; }
+body#bodyBG1 { min-width:980px;
+/*FILTER: progid:DXImageTransform.Microsoft.Gradient(gradientType=0, startColorStr=#1c48a1, endColorStr=#3387dd);
+background: -webkit-gradient(linear, 100% 0, 100% 100%, from(#1c48a1), to(#3387dd));
+background: -moz-linear-gradient(90deg, #1c48a1, #3387dd) no-repeat;
+background: -o-linear-gradient(top,#1c48a1, #3387dd); */
+background:url(../images/bodyBG1.jpg) 0px 0px repeat-x #1c48a1; }
+p { text-indent:2em; }
+img, a:link, a:visited, a:hover { border:none; text-decoration:none; }
+input[type="button"], input[type="submit"], select, option { cursor:pointer; }
+/*textarea { resize:none; } */
+input, textarea, select { font-size:12px; color:#666; }
+ul, li, ol { list-style-position:outside; list-style:none; }
+a:link, a:visited { color:#777; }
+a:hover { color:#d80050; text-decoration:none; }/*玫红*/
+.floatL { float:left; display:inline; }
+.floatR { float:right; display:inline; }
+.push { clear:both; }
+.cleardiv { width:100%; height:1px; clear:both; overflow:hidden; margin:0px; padding:0px; }
+.bold { font-weight:bold !important; }
+.Fnormal { font-weight:normal; }
+.none { display:none; }
+.taCenter { text-align:center; }
+.font11 { font-size:11px !important; }
+.font12 { font-size:12px !important; }
+.font13 { font-size:13px !important; }
+.font14 { font-size:14px !important; }
+.font15 { font-size:15px !important; }
+.font16 { font-size:16px !important; }
+.font17 { font-size:17px !important; }
+.font18 { font-size:18px !important; }
+.font20 { font-size:20px !important; }
+.bn { border:none; }
+.mar0 { margin:0px !important; }
+.mar0A { margin:0px auto; }
+.marT10 { margin-top:10px; }
+.marB5 { margin-bottom:5px; }
+.marB10 { margin-bottom:10px; }
+.marB20 { margin-bottom:20px; }
+.marB40 { margin-bottom:40px; }
+.marR10 { margin-right:10px; }
+.marR15 { margin-right:15px; }
+.marR20 { margin-right:20px; }
+.pad0 { padding:0px !important; }
+.pad5 { padding:5px !important; }
+.pad105 { padding:10px 5px; }
+.pad10EL { padding:10px; padding-left:0px; }
+.pad10 { padding:10px; }
+.pad13 { padding:13px; }
+.pad3_10 { padding:3px 10px; }
+.padL10 { padding-left:10px; }
+.padLR10 { padding-left:10px; padding-right:10px; }
+.padR10 { padding-right:10px; }
+.padR13 { padding-right:13px; }
+.padR42 { padding-right:42px; }
+.padLR13 { padding-left:13px; padding-right:13px; }
+.padR16 { padding-right:16px; }
+.padT23 { padding-top:23px !important; }
+.padB35 { padding-bottom:35px !important; }
+.padB30 { padding-bottom:30px; }
+.dBlock { display:block; }
+.BGwhite { background:#fff !important; }
+.black { color:#000 !important; }
+.white { color:#fff !important; }
+.red1 { color:#c52452 !important; }
+.yellow1 { color:#958265 !important; }
+.green1 { color:#6c9790 !important; }
+.gray1 { color:#999 !important; }
+.blue1 { color:#3686d6 !important; }
+.height70 { height:70px !important; }
+.height280 { height:280px !important; }
+.input30, .input50, .input60, .input100, .input160, .input240, .input250, .input260, .input330, .input480, .input500, .inputdf, .textareadf { height:20px; line-height:20px; color:#666; border-width:1px; border-style:solid; border-color:#7f9db9 #b4cade #b4cade #7f9db9; border:1px solid #A6C4EF; padding-left:3px; }
+.input30 { width:30px; }
+.input50 { width:50px; }
+.input60 { width:60px; }
+.input100 { width:100px; }
+.input160 { width:160px; }
+.input240 { width:240px; }
+.input250 { width:250px; }
+.input260 { width:260px; }
+.input330 { width:330px; }
+.input480 { width:480px; }
+.input500 { width:500px; }
+.inputdf, .textareadf { width:98%; }
+.textareadf { height:auto; }
+table { border-collapse:collapse; border:none;font-family:12px Arial, "宋体"; }
+.loginBox{ width:828px; height:508px; margin:50px auto; padding-top:125px; background:url(../images/login.png) 0px 0px no-repeat;}
+.loginBox table{border-collapse:inherit;}
+.loginBox table th{ font:bold 20px/52px "微软雅黑",Arial,"宋体"; color:#1980db;}
+.loginBox table td.loginIn{ background:url(../images/loginInput.jpg) 0px 0px no-repeat; height:37px; color:#3686d6; font:14px/37px "创艺简中圆","微软雅黑", Arial, "宋体";}
+.loginBox table td.loginIn .floatL{ padding-left:10px;}
+.loginBox table td.loginIn .floatR{ padding:7px 7px 0px 0px;}
+.loginInput{ width:204px; height:24px; line-height:24px; color:#039; background:transparent; border:none;}
+#sevenn{ color:#3686d6; cursor:pointer;}
+.btnLogin,.btnLogin1,.btnChangeUser,.btnChangeUser1,.btnChangePass,.btnChangePass1{ width:93px; height:34px; line-height:34px; background:url(../images/loginBtn.gif) 0px 0px no-repeat; cursor:pointer; border:none;}
+.btnLogin1{ background:url(../images/loginBtn.gif) 0px -38px no-repeat; }
+.btnChangeUser{ background:url(../images/loginBtn.gif) 0px -76px no-repeat; }
+.btnChangeUser1{ background:url(../images/loginBtn.gif) 0px -114px no-repeat; }
+.btnChangePass{ background:url(../images/loginBtn.gif) 0px -152px no-repeat; }
+.btnChangePass1{ background:url(../images/loginBtn.gif) 0px -190px no-repeat; }
+.loginBox .name{ font:bold 12px/14px Arial,"宋体"; color:#1980db;}
+

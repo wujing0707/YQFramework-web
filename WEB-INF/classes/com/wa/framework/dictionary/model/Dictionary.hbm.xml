@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2014-6-30 13:20:04 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.wa.framework.dictionary.model.Dictionary" table="SYS_DICTIONARY">
+        <id name="id" type="string">
+            <column name="ID" length="50" />
+            <generator class="uuid" />
+        </id>
+        <property name="code" type="string" column="CODE"></property>
+        <property name="description" type="string" column="DESCRIPTION"></property>
+        <property name="type" type="string" column="TYPE"></property>
+        <property name="remark" type="string" column="REMARK"> </property>
+    </class>
+</hibernate-mapping>

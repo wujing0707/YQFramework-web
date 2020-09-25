@@ -1,0 +1,42 @@
+@charset "utf-8";
+/* CSS Document */
+*+html, *+body { overflow:hidden; }/*7*/
+*html, *body { overflow:hidden; }/*6*/
+* { margin:0px; padding:0px; list-style-type:none; }
+a, img { border:0; }
+.floatL { float:left; }
+.floatR { float:right; }
+body {/* overflow-y:scroll;*/ overflow-x:hidden; line-height:180%; font:12px Arial, "宋体"; }
+body.chooseBody { min-width:980px; FILTER: progid:DXImageTransform.Microsoft.Gradient(gradientType=0, startColorStr=#162a5f, endColorStr=#273b70);
+background: -webkit-gradient(linear, 0 100%, 0 100%, from(#162a5f), to(#273b70)); background: -moz-linear-gradient(0deg, #162a5f, #273b70); background: -o-linear-gradient(left, #162a5f, #273b70); }
+.rela { position:relative; }
+#conHeight { overflow-x:hidden; overflow-y:scroll; position:relative; top:45px; z-index:2; }
+.middleChoose { width:718px; height:auto; position:absolute; top:150px; left:50%; margin-left:-359px; z-index:3; padding-bottom:150px; }
+.bottomPic { width:925px; height:360px; background:url(../images/bottomPic.png) 0px 0px no-repeat; _background:none; position:absolute; bottom:0px; right:0px; z-index:1; }
+.chooseTitle { width:100%; height:45px; text-align:center; font:bold 16px/45px Arial, "宋体"; color:#fff; position:absolute; top:0px; left:0px; z-index:6; /*background:url(../images/chooseTitle.png) 0px 0px repeat-x; _background:url(../images/chooseTitle.gif) 0px 0px repeat-x;*/
+ background-color: #0b1530;  filter: progid:DXImageTransform.Microsoft.Shadow(color='#132351', Direction=180, Strength=8);
+-moz-box-shadow:2px 2px 8px #132351; -webkit-box-shadow:2px 2px 8px #132351; box-shadow:2px 2px 8px #132351; }
+.middleTable td { height:146px; }
+.LitTable td { height:auto; padding:0px; }
+.pad1514 { padding:14px 15px; width:204px; height:118px; }
+.opcity50 { filter:alpha(Opacity=50); -moz-opacity:0.5; opacity: 0.5; }
+td.opcity50 { height:74px; }
+td.whiteTit { font:16px/22px "微软雅黑", "宋体", Arial; color:#fff; height:44px; }
+a.middleHov:link, a.middleHov:hover, a.middleHov:visited { display:block; width:234px; height:146px; border:none; text-decoration:none; background:#fff; position:absolute; top:0px; left:0px; z-index:4; filter:alpha(Opacity=0); -moz-opacity:0; opacity: 0; }
+a.middleHov:hover { filter:alpha(Opacity=10); -moz-opacity:0.1; opacity: 0.1; }
+/*------------------------------------------右边页签开始----------------------------------------*/
+#Rtab { height:45px; overflow-y:hidden; position:absolute; top:0px; right:0px; z-index:7; }
+#Rtab ul li, #Rtab ul li a:link, #Rtab ul li a:hover, #Rtab ul li a:visited { height:45px; color:#415ca5; font:12px/43px Arial, "宋体"; float:left; cursor:pointer; }
+#Rtab ul li.active, #Rtab ul li a:hover { color:#7d91c6; background:#172448; padding:0px 10px; }
+#Rtab ul li a:link, #Rtab ul li a:hover, #Rtab ul li a:visited { display:block; float:none; text-decoration:none; padding:0px 10px;_width:50px;_overflow:visible; }
+#Rtab ul li a:hover { background:#172448; }
+/*------------------------------------------右边页签结束----------------------------------------*/
+/*----------------------------------------changePassword开始--------------------------------------*/
+.middlePassword {/* background:#7989b6;*/ background:#b3c4e5; width:424px; min-height:295px; position:absolute; top:150px; left:50%; margin-left:-212px; z-index:3; }
+.chanPassTable { border-collapse:inherit; margin:0px auto; }
+.chanPassTable th { height:40px; font:21px/40px "微软雅黑", "宋体", Arial; color:#0b1530; }
+.chanPassInput { border:none; /*background:#55689d;color:#7d91c6;*/ background:#748ec8; color:#beceef; width:301px; padding:0px 7px; height:40px; font:15px/40px "微软雅黑", "宋体", Arial;  }
+.btnChanPass, .btnChanPass1 { border:none; cursor:pointer; width:315px; text-align:center; height:33px;/* background:#23376c; color:#7485b5;*/ background:#3e5eb5; color:#beceef; font:15px/33px "微软雅黑", "宋体", Arial; }
+.btnChanPass1 { background:#2d4279; }
+.chanPassTable th span.floatR{ font-size:12px; color:#3e5eb5;}
+/*----------------------------------------changePassword结束--------------------------------------*/

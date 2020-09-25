@@ -1,0 +1,60 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+
+<hibernate-mapping package="com.datacollect.model">
+	<class
+		name="Gjzdys"
+		table="xy_gjzdys" schema="dbo">
+		<meta attribute="sync-DAO">false</meta>
+		<id
+			name="id"
+			type="string"
+			column="ID"
+		>
+			<generator class="uuid"/>
+		</id>
+
+		<property
+			name="fieldName"
+			column="excelziduan"
+			type="string"
+		
+			length="100"
+		/>
+		<property
+			name="fieldDescription"
+			column="ziduanming"
+			type="string"
+		
+			length="32"
+		/>
+		<property
+			name="type"
+			column="datatype"
+			type="string"
+			
+			length="32"
+		/>
+		<property
+			name="length"
+			column="length"
+			type="string"
+		
+			length="32"
+		/>
+		<property
+			name="isNull"
+			column="isNull"
+			type="string"
+			
+			length="2"
+		/>
+
+		
+			
+	
+
+	</class>	
+</hibernate-mapping>

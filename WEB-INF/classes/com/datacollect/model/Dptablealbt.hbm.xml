@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+
+<hibernate-mapping package="com.datacollect.model">
+	<class
+		name="Dptablealbt"
+		table="DP_TABLE_ALBT" schema="dbo">
+		<meta attribute="sync-DAO">false</meta>
+		<id
+			name="id"
+			type="string"
+			column="ID"
+		>
+			<generator class="uuid"/>
+		</id>
+
+		<property
+			name="albt_table_name"
+			column="albt_table_name"
+			type="string"
+			not-null="true"
+			length="50"
+		/>
+		<property
+			name="temp_table_name"
+			column="temp_table_name"
+			type="string"
+			not-null="true"
+			length="100"
+		/>
+		<property
+			name="is_completion"
+			column="is_completion"
+			type="string"
+			not-null="true"
+			length="32"
+		/>
+	
+	</class>	
+</hibernate-mapping>
